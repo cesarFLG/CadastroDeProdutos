@@ -12,12 +12,30 @@ public class CadastrarProduto {
 
     public static void Cadastrar() throws SQLException {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Digite o nome do produto: ");
-        String nome = scanner.nextLine();
-        System.out.println("Digite a Quantidade do produto: ");
-        int quantidade = scanner.nextInt();
-        System.out.println("Digite o valor do produto: ");
-        double preco = scanner.nextDouble();
+        String nome;
+        int quantidade = 0;
+        double preco = 0.0;
+
+        while (true) {
+            System.out.println("Digite o nome do produto: ");
+            nome = scanner.next();
+            if (!nome.isBlank()) {
+                break;
+            }else{
+                System.out.println("ERRO! O Nome Não Pode Estar Vazio.");
+            }
+        }
+
+        while (true) {
+            System.out.println("Digite o quantidade do produto: ");
+            quantidade = scanner.nextInt();
+            if (quantidade <= 0) {
+                break;
+            }else{
+                System.out.println( "ERRO! A Quantidade Deve Ser Maior Que Zero");
+            }
+    }
+
 
 
     try(Connection conexao = BancoDeDados.conectar()){

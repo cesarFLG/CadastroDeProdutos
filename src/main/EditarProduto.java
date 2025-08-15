@@ -136,7 +136,7 @@ public class EditarProduto {
         }
     }
 
-    // Métodos auxiliares para validação de entrada
+
     private static int lerInteiro() {
         while (!scanner.hasNextInt()) {
             System.out.print("Por favor, digite um número inteiro válido: ");
