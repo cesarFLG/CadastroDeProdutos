@@ -12,7 +12,7 @@ public class RemoverProduto {
         int id = scanner.nextInt();
 
         try (Connection conexao = BancoDeDados.conectar()){
-            String sql = "DELETE FROM produto WHERE id = ?";
+            String sql = "DELETE FROM produtos WHERE id = ?";
             PreparedStatement stmt = conexao.prepareStatement(sql);
             stmt.setInt(1, id);
 
